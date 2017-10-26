@@ -1,5 +1,7 @@
 .app {
   text-align: center;
+  background-color: rgb(247, 247, 247);
+  height: 100vh;
 }
 
 .appLogo {
@@ -8,10 +10,16 @@
 }
 
 .appHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
   background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  height: 40px;
+  padding: 10px 15px;
+  color: rgb(0, 196, 156);
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
 }
 
 .appIntro {

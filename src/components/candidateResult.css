@@ -1,0 +1,10 @@
+.resultSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 60%;
+  min-width: 350px;
+  padding: 20px;
+}

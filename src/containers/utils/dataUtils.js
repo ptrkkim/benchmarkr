@@ -22,9 +22,14 @@ function processCSV(csvText, columnsArr) {
   return processedData;
 }
 
+// sometimes these go down??? should have set up my own server to serve up the data or hardcoded..
+// const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+const corsProxy = 'https://galvanize-cors-proxy.herokuapp.com/';
+
+
 export function getCandidatesData() {
   // used a CORS proxy so i can fetch the data from localhost...
-  return fetch('https://cors-anywhere.herokuapp.com/https://s3.amazonaws.com/simple-fractal-recruiting/score-records.csv')
+  return fetch(`${corsProxy}https://s3.amazonaws.com/simple-fractal-recruiting/score-records.csv`)
     .then(data => data.text())
     .then((scores) => {
       const columns = ['communicationScore', 'codingScore', 'title', 'companyId'];
@@ -35,7 +40,7 @@ export function getCandidatesData() {
 }
 
 export function getCompaniesData() {
-  return fetch('https://cors-anywhere.herokuapp.com/https://s3.amazonaws.com/simple-fractal-recruiting/companies.csv')
+  return fetch(`${corsProxy}https://s3.amazonaws.com/simple-fractal-recruiting/companies.csv`)
     .then(data => data.text())
     .then((companies) => {
       const columns = ['fractalIndex'];

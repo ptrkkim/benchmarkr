@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getCandidatesData, getCompaniesData } from './utils/dataUtils';
-// import Benchmark from '../containers/Benchmark';
-import { app, appHeader } from './App.css';
+import Benchmark from '../containers/Benchmark';
+import { app, appHeader } from './Main.css';
 
 class Main extends Component {
   constructor(props) {
@@ -25,15 +25,17 @@ class Main extends Component {
   }
 
   render() {
+    const trendyAppName = 'BENCHMARKR';
+
     return (
       <main className={app}>
         <header className={appHeader}>
-          <h2>Benchmarkr</h2>
+          <h2>{trendyAppName}</h2>
         </header>
-        {/* <Benchmark
+        <Benchmark
           candidates={this.state.candidates}
           companies={this.state.companies}
-        /> */}
+        />
       </main>
     );
   }

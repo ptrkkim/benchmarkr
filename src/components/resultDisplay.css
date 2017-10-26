@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 25px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.categoryHead {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 2px solid black;
+
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.categoryHead > h3 {
+  margin: 0px;
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.rankMsg {
+  font-size: 0.5em;
+}
+
+.feedbackMsg {
+  margin: 5px;
+}

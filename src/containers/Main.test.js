@@ -10,14 +10,14 @@
 // basic smoke test to ensure component renders at all
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import Main from './Main';
 
 it('renders without crashing', () => {
-  shallow(<App />);
+  shallow(<Main />);
 });
 
 it('renders welcome message', () => {
-  const wrapper = shallow(<App />);
+  const wrapper = shallow(<Main />);
   const welcome = <h2>Welcome to React</h2>
   expect(wrapper.contains(welcome)).toEqual(true);
 });

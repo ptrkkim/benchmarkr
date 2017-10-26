@@ -20,11 +20,6 @@ describe('ranking utility functions', () => {
   const originalCompany = companies[2];
   const fIndex1 = originalCompany.fractalIndex;
 
-  test('isDifferentCompany checks for equality of two company IDs', () => {
-    expect(isDifferentCompany('1', '2')).toBeTruthy();
-    expect(isDifferentCompany('3', '3')).toBeFalsy();
-  });
-
   test('isSimilarCompany checks for a low difference in fractal indices', () => {
     const similarCompany = companies[1];
     const similarIndex = similarCompany.fractalIndex;
@@ -42,9 +37,9 @@ describe('ranking utility functions', () => {
     expect(similarCompanies).not.toHaveProperty('5');
   });
 
-  test('getSimilarCompanies does not include the original company', () => {
+  test('getSimilarCompanies includes the original company', () => {
     const similarCompanies = getSimilarCompanies(2, companies);
-    expect(similarCompanies).not.toHaveProperty('2');
+    expect(similarCompanies).toHaveProperty('2');
   });
 
   test('filterCandidates finds other candidates from similar companies', () => {

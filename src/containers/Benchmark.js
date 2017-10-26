@@ -17,26 +17,25 @@ class Benchmark extends Component {
   handleChange = (evt) => {
     this.setState({
       inputValue: evt.target.value,
-      validId: true,
     });
   }
 
   handleSubmit = (evt) => {
     evt.preventDefault();
     const { candidates, companies } = this.props; // eslint-disable-line
-    const candidateId = this.state.inputValue;
+    const candidateId = +this.state.inputValue;
 
     // show validation error if lookup attempt on nonexistent candidate
     if (!candidates[candidateId]) {
       this.setState({
-        valid: false,
+        validId: false,
       });
     } else {
-      const [communicationRank, codingRank] = getRankings(candidateId, candidates, companies);
+      const [commPercentile, codePercentile] = getRankings(candidateId, candidates, companies);
       this.setState({
         validId: true,
-        communicationRank,
-        codingRank,
+        commPercentile,
+        codePercentile,
       });
     }
   }
@@ -44,6 +43,8 @@ class Benchmark extends Component {
   render() {
     const { commPercentile, codePercentile, validId } = this.state;
     const resultsCalculated = commPercentile !== 0 && codePercentile !== 0;
+    console.log('results calculated', resultsCalculated);
+    console.log('comm', commPercentile, 'code', codePercentile);
     const results = resultsCalculated
       ? (
         <CandidateResults
@@ -53,7 +54,7 @@ class Benchmark extends Component {
       : null;
 
     return (
-      <section>
+      <section className="bench-container">
         <CandidateInput
           validId={validId}
           handleChange={this.handleChange}

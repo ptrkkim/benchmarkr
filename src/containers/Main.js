@@ -16,7 +16,6 @@ class Main extends Component {
     // consolidate data fetching into a single setState + re-render
     const allData = Promise.all([getCandidatesData(), getCompaniesData()]);
     allData.then(([candidates, companies]) => {
-      console.log(candidates, companies);
       this.setState({
         candidates,
         companies,

@@ -59,9 +59,6 @@ export const getPercentiles = (candidate, similarCandidates) => {
     }
   }
 
-  console.log('lowerComm', lowerCommCount);
-  console.log('equalComm', equalCommCount);
-  console.log('numCandidates', numCandidates);
   const commPercentile = percentile(lowerCommCount, equalCommCount, numCandidates);
   const codePercentile = percentile(lowerCodingCount, equalCodingCount, numCandidates);
 

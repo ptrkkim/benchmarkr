@@ -42,23 +42,23 @@ describe('ranking utility functions', () => {
     expect(similarCompanies).toHaveProperty('2');
   });
 
-  test('filterCandidates finds other candidates from similar companies', () => {
+  test.skip('filterCandidates finds other candidates from similar companies', () => {
 
   });
 
-  test('filterCandidates finds other candidates with the same title', () => {
+  test.skip('filterCandidates finds other candidates with the same title', () => {
 
   });
 
-  test('percentile calculates the percentile ranking of a score', () => {
+  test.skip('percentile calculates the percentile ranking of a score', () => {
 
   });
 
-  test('getPercentiles returns an array of percentiles by category', () => {
+  test.skip('getPercentiles returns an array of percentiles by category', () => {
 
   });
 
-  test('getRankings returns the percentile rankings for a single candidate', () => {
+  test.skip('getRankings returns the percentile rankings for a single candidate', () => {
 
   });
 });

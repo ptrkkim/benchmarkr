@@ -45,8 +45,6 @@ class Benchmark extends Component {
   render() {
     const { commPercentile, codePercentile, validId } = this.state;
     const resultsCalculated = commPercentile !== 0 && codePercentile !== 0;
-    console.log('results calculated', resultsCalculated);
-    console.log('comm', commPercentile, 'code', codePercentile);
     const results = resultsCalculated
       ? (
         <CandidateResults

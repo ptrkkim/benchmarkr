@@ -29,6 +29,8 @@ class Benchmark extends Component {
     if (!candidates[candidateId]) {
       this.setState({
         validId: false,
+        commPercentile: 0,
+        codePercentile: 0,
       });
     } else {
       const [commPercentile, codePercentile] = getRankings(candidateId, candidates, companies);

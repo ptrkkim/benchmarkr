@@ -38,7 +38,7 @@ export function getCompaniesData() {
   return fetch('https://cors-anywhere.herokuapp.com/https://s3.amazonaws.com/simple-fractal-recruiting/companies.csv')
     .then(data => data.text())
     .then((companies) => {
-      const columns = ['fractalScore'];
+      const columns = ['fractalIndex'];
       const processedCompanies = processCSV(companies, columns);
       return processedCompanies;
     })

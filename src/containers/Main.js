@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { getCandidatesData, getCompaniesData } from '../utils';
-import { app, appHeader, appIntro } from './App.css';
+import { getCandidatesData, getCompaniesData } from './utils/dataUtils';
+// import Benchmark from '../containers/Benchmark';
+import { app, appHeader } from './App.css';
 
-class App extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,8 +13,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // consolidate data fetching into a single setState + re-render
     const allData = Promise.all([getCandidatesData(), getCompaniesData()]);
     allData.then(([candidates, companies]) => {
+      console.log(candidates, companies);
       this.setState({
         candidates,
         companies,
@@ -22,20 +25,18 @@ class App extends Component {
   }
 
   render() {
-    console.log('rendering!!!!!!!!!!!!!!!!!!!!');
-    console.log('scores', this.state);
-
     return (
-      <div className={app}>
-        <div className={appHeader}>
-          <h2>Welcome to React</h2>
-        </div>
-        <p className={appIntro}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <main className={app}>
+        <header className={appHeader}>
+          <h2>Benchmarkr</h2>
+        </header>
+        {/* <Benchmark
+          candidates={this.state.candidates}
+          companies={this.state.companies}
+        /> */}
+      </main>
     );
   }
 }
 
-export default App;
+export default Main;
